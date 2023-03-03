@@ -61,10 +61,10 @@ namespace OrderTracker.Tests
     {
       string orderTitle01 = "Muffins";
       string orderTitle02 = "Scones";
-      string orderDescripton1 = "birthday";
-      string orderDescription2 = "wedding";
-      Order newOrder1 = new Order(orderTitle01, orderDescription1);
-      Order newOrder2 = new Order(orderTitle02, orderDescription1);
+      string orderDescription01 = "Birthday";
+      string orderDescription02 = "Wedding";
+      Order newOrder1 = new Order(orderTitle01, orderDescription01);
+      Order newOrder2 = new Order(orderTitle02, orderDescription02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       List<Order> result = Order.GetAll();
@@ -89,10 +89,10 @@ namespace OrderTracker.Tests
     {
       string orderTitle01 = "Muffins";
       string orderTitle02 = "Scones";
-      string orderDescripton1 = "birthday";
-      string orderDescription2 = "wedding";
-      Order newOrder1 = new Order(orderTitle01, orderDescription1);
-      Order newOrder2 = new Order(orderTitle02, orderDescription2);
+      string orderDescripton01 = "birthday";
+      string orderDescription02 = "wedding";
+      Order newOrder1 = new Order(orderTitle01, orderDescripton01);
+      Order newOrder2 = new Order(orderTitle02, orderDescription02);
 
       Order result = Order.Find(2);
 
@@ -102,6 +102,7 @@ namespace OrderTracker.Tests
     [TestMethod]
     public void GetOrderDescription_ReturnsDescription_String()
     {
+      string orderTitle = "SparrowCafe";
       string orderDescription = "birthday";
 
       Order newOrder = new Order(orderTitle, orderDescription);

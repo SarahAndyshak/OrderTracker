@@ -93,7 +93,8 @@ namespace OrderTracker.Test
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
       string orderTitle = "Muffins";
-      Order newOrder = new Order(orderTitle);
+      string orderDescription = "birthday";
+      Order newOrder = new Order(orderTitle, orderDescription);
       List<Order> newList = new List<Order> { newOrder };
       string vendorName = "SparrowCafe";
       string vendorDescription1 = "cafe";
