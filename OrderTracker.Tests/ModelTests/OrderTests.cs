@@ -154,6 +154,6 @@ namespace OrderTracker.Tests
       string result = newOrder.OrderDate;
 
       Assert.AreEqual(orderDate, result);
-      } 
+      }
   }
 }

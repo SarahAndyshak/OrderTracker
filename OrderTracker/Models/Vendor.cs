@@ -16,6 +16,7 @@ namespace OrderTracker.Models
       VendorDescription = vendorDescription;
       _instances.Add(this);
       Id = _instances.Count;
+      Orders = new List<Order> { };
     }
 
     public static List<Vendor> GetAll()
