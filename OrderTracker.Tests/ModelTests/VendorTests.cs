@@ -63,8 +63,10 @@ namespace OrderTracker.Test
     {
       string vendorName01 = "SparrowCafe";
       string vendorName02 = "NewportMarket";
-      Vendor newVendor1 = new Vendor(vendorName01);
-      Vendor newVendor2 = new Vendor(vendorName02);
+      string vendorDescription1 = "cafe";
+      string vendorDescription2 = "market";
+      Vendor newVendor1 = new Vendor(vendorName01, vendorDescription1);
+      Vendor newVendor2 = new Vendor(vendorName02, vendorDescription2);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2};
       
       List<Vendor> result = Vendor.GetAll();
