@@ -16,7 +16,7 @@ namespace OrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test", "description", 5);
+      Order newOrder = new Order("test", "description", 5, "date");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -26,8 +26,9 @@ namespace OrderTracker.Tests
       string orderTitle = "Muffins";
       string orderDescription = "birthday";
       int orderPrice = 5; 
+      string orderDate = "March 3";
 
-      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
       string result = newOrder.OrderTitle;
 
       Assert.AreEqual(orderTitle, result);
@@ -39,7 +40,8 @@ namespace OrderTracker.Tests
       string orderTitle = "Muffins";
       string orderDescription = "birthday";
       int orderPrice = 5;
-      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
+      string orderDate = "March 3";
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
 
       string updatedOrderTitle = "Scones";
       newOrder.OrderTitle = updatedOrderTitle;
@@ -67,8 +69,10 @@ namespace OrderTracker.Tests
       string orderDescription02 = "Wedding";
       int orderPrice01 = 5;
       int orderPrice02 = 6;
-      Order newOrder1 = new Order(orderTitle01, orderDescription01, orderPrice01);
-      Order newOrder2 = new Order(orderTitle02, orderDescription02, orderDescription02, orderPrice02);
+      string orderDate01 = "March 3";
+      string orderDate02 = "May 5";
+      Order newOrder1 = new Order(orderTitle01, orderDescription01, orderPrice01, orderDate01);
+      Order newOrder2 = new Order(orderTitle02, orderDescription02, orderPrice02, orderDate02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       List<Order> result = Order.GetAll();
@@ -82,7 +86,8 @@ namespace OrderTracker.Tests
       string orderTitle = "Muffins";
       string orderDescription = "birthday";
       int orderPrice = 5;
-      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
+      string orderDate = "March 3";
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
 
       int result = newOrder.Id;
 
@@ -98,9 +103,11 @@ namespace OrderTracker.Tests
       string orderDescription02 = "wedding";
       int orderPrice01 = 5;
       int orderPrice02 = 6;
+      string orderDate01 = "March 3";
+      string orderDate02 = "May 5";
 
-      Order newOrder1 = new Order(orderTitle01, orderDescripton01, orderPrice01);
-      Order newOrder2 = new Order(orderTitle02, orderDescription02, orderPrice02);
+      Order newOrder1 = new Order(orderTitle01, orderDescripton01, orderPrice01, orderDate01);
+      Order newOrder2 = new Order(orderTitle02, orderDescription02, orderPrice02, orderDate02);
 
       Order result = Order.Find(2);
 
@@ -113,8 +120,9 @@ namespace OrderTracker.Tests
       string orderTitle = "SparrowCafe";
       string orderDescription = "birthday";
       int orderPrice = 5;
+      string orderDate = "March 3";
 
-      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
       string result = newOrder.OrderDescription;
 
       Assert.AreEqual(orderDescription, result);
@@ -126,12 +134,26 @@ namespace OrderTracker.Tests
       string orderTitle = "SparrowCafe";
       string orderDescription = "birthday";
       int orderPrice = 5;
+      string orderDate = "March 3";
 
-      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
       int result = newOrder.OrderPrice;
 
       Assert.AreEqual(orderPrice, result);
     }
 
+    [TestMethod]
+    public void GetOrderDate_ReturnsDate_String()
+    {
+      string orderTitle = "SparrowCafe";
+      string orderDescription = "birthday";
+      int orderPrice = 5;
+      string orderDate = "March 3";
+
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+      string result = newOrder.OrderDate;
+
+      Assert.AreEqual(orderDate, result);
+      }
   }
 }

@@ -95,10 +95,12 @@ namespace OrderTracker.Test
       string orderTitle = "Muffins";
       string orderDescription = "birthday";
       int orderPrice = 5;
-      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
+      string orderDate = "March 3";
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
       List<Order> newList = new List<Order> { newOrder };
       string vendorName = "SparrowCafe";
       string vendorDescription1 = "cafe";
+      
       Vendor newVendor = new Vendor(vendorName, vendorDescription1);
       newVendor.AddOrder(newOrder);
 
