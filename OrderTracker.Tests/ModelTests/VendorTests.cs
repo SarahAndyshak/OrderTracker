@@ -94,7 +94,8 @@ namespace OrderTracker.Test
     {
       string orderTitle = "Muffins";
       string orderDescription = "birthday";
-      Order newOrder = new Order(orderTitle, orderDescription);
+      int orderPrice = 5;
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
       List<Order> newList = new List<Order> { newOrder };
       string vendorName = "SparrowCafe";
       string vendorDescription1 = "cafe";

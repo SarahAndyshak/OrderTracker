@@ -16,7 +16,7 @@ namespace OrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test", "description");
+      Order newOrder = new Order("test", "description", 5);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -25,8 +25,9 @@ namespace OrderTracker.Tests
     {
       string orderTitle = "Muffins";
       string orderDescription = "birthday";
+      int orderPrice = 5; 
 
-      Order newOrder = new Order(orderTitle, orderDescription);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
       string result = newOrder.OrderTitle;
 
       Assert.AreEqual(orderTitle, result);
@@ -37,7 +38,8 @@ namespace OrderTracker.Tests
     {
       string orderTitle = "Muffins";
       string orderDescription = "birthday";
-      Order newOrder = new Order(orderTitle, orderDescription);
+      int orderPrice = 5;
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
 
       string updatedOrderTitle = "Scones";
       newOrder.OrderTitle = updatedOrderTitle;
@@ -63,8 +65,10 @@ namespace OrderTracker.Tests
       string orderTitle02 = "Scones";
       string orderDescription01 = "Birthday";
       string orderDescription02 = "Wedding";
-      Order newOrder1 = new Order(orderTitle01, orderDescription01);
-      Order newOrder2 = new Order(orderTitle02, orderDescription02);
+      int orderPrice01 = 5;
+      int orderPrice02 = 6;
+      Order newOrder1 = new Order(orderTitle01, orderDescription01, orderPrice01);
+      Order newOrder2 = new Order(orderTitle02, orderDescription02, orderDescription02, orderPrice02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       List<Order> result = Order.GetAll();
@@ -77,7 +81,8 @@ namespace OrderTracker.Tests
     {
       string orderTitle = "Muffins";
       string orderDescription = "birthday";
-      Order newOrder = new Order(orderTitle, orderDescription);
+      int orderPrice = 5;
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
 
       int result = newOrder.Id;
 
@@ -91,8 +96,11 @@ namespace OrderTracker.Tests
       string orderTitle02 = "Scones";
       string orderDescripton01 = "birthday";
       string orderDescription02 = "wedding";
-      Order newOrder1 = new Order(orderTitle01, orderDescripton01);
-      Order newOrder2 = new Order(orderTitle02, orderDescription02);
+      int orderPrice01 = 5;
+      int orderPrice02 = 6;
+
+      Order newOrder1 = new Order(orderTitle01, orderDescripton01, orderPrice01);
+      Order newOrder2 = new Order(orderTitle02, orderDescription02, orderPrice02);
 
       Order result = Order.Find(2);
 
@@ -104,11 +112,26 @@ namespace OrderTracker.Tests
     {
       string orderTitle = "SparrowCafe";
       string orderDescription = "birthday";
+      int orderPrice = 5;
 
-      Order newOrder = new Order(orderTitle, orderDescription);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
       string result = newOrder.OrderDescription;
 
       Assert.AreEqual(orderDescription, result);
     }
+
+    [TestMethod]
+    public void GetOrderPrice_ReturnsPrice_Int()
+    {
+      string orderTitle = "SparrowCafe";
+      string orderDescription = "birthday";
+      int orderPrice = 5;
+
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice);
+      int result = newOrder.OrderPrice;
+
+      Assert.AreEqual(orderPrice, result);
+    }
+
   }
 }
