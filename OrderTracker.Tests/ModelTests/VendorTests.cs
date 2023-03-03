@@ -12,7 +12,7 @@ namespace OrderTracker.Test
     {
       Vendor.ClearAll();
     }
-    
+
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -36,6 +36,15 @@ namespace OrderTracker.Test
       Vendor newVendor = new Vendor(vendorName);
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void GetVendorDescription_ReturnsVendorDescription_String()
+    {
+      string vendorDescription = "cafe";
+      Vendor newVendor = new Vendor(vendorDescription);
+      string result = newVendor.VendorDescription;
+      Assert.AreEqual(vendorDescription, result);
     }
   }
   
