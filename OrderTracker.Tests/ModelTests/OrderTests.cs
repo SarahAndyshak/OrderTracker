@@ -78,5 +78,18 @@ namespace OrderTracker.Tests
 
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string orderTitle01 = "Muffins";
+      string orderTitle02 = "Scones";
+      Order newOrder1 = new Order(orderTitle01);
+      Order newOrder2 = new Order(orderTitle02);
+
+      Order result = Order.Find(2);
+
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
