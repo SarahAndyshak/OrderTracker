@@ -24,5 +24,18 @@ namespace OrderTracker.Tests
 
       Assert.AreEqual(orderTitle, result);
     }
+
+    [TestMethod]
+    public void SetOrderTitle_SetOrderTitle_String()
+    {
+      string orderTitle = "Muffins";
+      Order newOrder = new Order(orderTitle);
+
+      string updatedOrderTitle = "Scones";
+      newOrder.OrderTitle = updatedOrderTitle;
+      string result = newOrder.OrderTitle;
+
+      Assert.AreEqual(updatedOrderTitle, result);
+    }
   }
 }
