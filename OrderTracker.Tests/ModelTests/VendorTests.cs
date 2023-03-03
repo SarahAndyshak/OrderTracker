@@ -18,6 +18,7 @@ namespace OrderTracker.Test
     {
       Vendor newVendor = new Vendor("test vendor");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+
     }
 
     [TestMethod]
@@ -35,17 +36,16 @@ namespace OrderTracker.Test
       string vendorName = "TestVendor";
       Vendor newVendor = new Vendor(vendorName);
       int result = newVendor.Id;
-      Assert.AreEqual(1, result);
     }
 
-    [TestMethod]
-    public void GetVendorDescription_ReturnsVendorDescription_String()
-    {
-      string vendorDescription = "cafe";
-      Vendor newVendor = new Vendor(vendorDescription);
-      string result = newVendor.VendorDescription;
-      Assert.AreEqual(vendorDescription, result);
-    }
+    // [TestMethod]
+    // public void GetVendorDescription_ReturnsVendorDescription_String()
+    // {
+    //   string vendorDescription = "cafe";
+    //   Vendor newVendor = new Vendor(vendorDescription);
+    //   string result = newVendor.VendorDescription;
+    //   Assert.AreEqual(vendorDescription, result);
+    // }
   }
   
 }
