@@ -15,15 +15,18 @@
 
     <h3>Here are all the orders from this vendor:</h3>
 
-    <ol>
-    @foreach (Order order in @Model["orders"])
-    {
-      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.OrderTitle</a></li>
-    }
-    </ol>
+    <div class="container"></div>
+      <ol class="oL">
+      @foreach (Order order in @Model["orders"])
+      {
+        <li><h4><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.OrderTitle</a></h4></li>
+      }
+      </ol>
+    </div>
+    <br>
 
-    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-    <p><a href='/vendors'>Return to vendor list</a></p>
-    <p><a href='/'>Return to Main Page</a></p>
+    <h5><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></h5>
+    <h5><a href='/vendors'>Return to vendor list</a></h5>
+    <h5><a href='/'>Return to Main Page</a></h5>
   </body>
 </html>

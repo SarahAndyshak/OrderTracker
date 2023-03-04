@@ -22,7 +22,7 @@ A website for Pierre to track his business's vendors and orders.
 
 ## Known Bugs
 
-
+As of 4:30pm on 3 March 2023, no known bugs!
 
 ## License
 Enjoy the site! If you have questions or suggestions for fixing the code, please contact me!

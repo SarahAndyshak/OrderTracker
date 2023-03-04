@@ -16,6 +16,10 @@ h3 {
   text-align: center;
 }
 
+h5 {
+  text-align: center;
+}
+
 p {
   text-align: center;
 }
@@ -25,5 +29,13 @@ a {
 }
 
 #form {
+  text-align: center;
+}
+
+#links {
+  text-align: center;
+}
+
+div.container {
   text-align: center;
 }
